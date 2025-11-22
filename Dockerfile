@@ -6,4 +6,4 @@ COPY app/server.js ./
 COPY app/test.js ./
 COPY app/public ./public
 EXPOSE 3000
-CMD ["node", "start"]
+CMD ["node", "server.js"]

@@ -8,7 +8,7 @@ let todos = [];
 async function loadTodos() {
   try {
     statusEl.textContent = "Loading todos…";
-    const res = await fetch("/todos"); // calls your backend
+    const res = await fetch('http://localhost:3000/todos'); // calls your backend
     const data = await res.json();
 
     todos = data.map((t) => ({ ...t }));

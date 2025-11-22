@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKER_IMAGE = "ananya0507/todo-app"
-    DOCKER_CREDS_ID = 'dockerhub-credss'
+    DOCKER_CREDS_ID = 'docker-hub'
     KUBECONFIG_CRED = 'kubeconfig-file'
   }
 
@@ -28,7 +28,7 @@ pipeline {
 
     stage('Push to Docker Hub') {
       steps {
-        withCredentials([usernamePassword(credentialsId: "${DOCKER_CREDS_ID}", usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+        withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
           sh "echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin"
           sh "docker push ${DOCKER_IMAGE}:${BUILD_NUMBER}"
           sh "docker push ${DOCKER_IMAGE}:latest"

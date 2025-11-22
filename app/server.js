@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
@@ -8,7 +9,9 @@ let todos = [
 ];
 
 app.get('/todos', (req, res) => res.json(todos));
-app.use(express.static("public"));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.listen(3000, () => {
   console.log("Todo app running on port 3000");

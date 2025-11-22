@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todo App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Todo App</h1>
+      <p class="subtitle">Kubernetes + Jenkins + Docker 🚀</p>
+    </header>
+
+    <main>
+      <form id="todo-form">
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="Add a new task…"
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+
+      <div id="status" class="status">Loading todos…</div>
+
+      <ul id="todo-list" class="todo-list"></ul>
+    </main>
+
+    <footer>
+      <small>Backend: <code>/todos</code> API</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

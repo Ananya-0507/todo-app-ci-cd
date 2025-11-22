@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     DOCKER_IMAGE = "ananya0507/todo-app"
-    DOCKER_CREDS_ID = 'dockerhub-creds'
+    DOCKER_CREDS_ID = 'dockerhub-credss'
     KUBECONFIG_CRED = 'kubeconfig-file'
   }
 

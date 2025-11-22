@@ -8,6 +8,7 @@ let todos = [
 ];
 
 app.get('/todos', (req, res) => res.json(todos));
+app.use(express.static("public"));
 
 app.listen(3000, () => {
   console.log("Todo app running on port 3000");
